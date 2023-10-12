@@ -6,7 +6,8 @@ const Navber = () => {
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/About'>About</NavLink></li>
         <li><NavLink to='/Career'>Career</NavLink></li>
-        <li><NavLink to='/login'>login</NavLink></li>
+        <li><NavLink to='/login'>Login</NavLink></li>
+        <li><NavLink to='/register'>Register</NavLink></li>
 
     </>
 
@@ -29,7 +30,7 @@ const Navber = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link className="flex gap-3">
+                <Link to="/login" className="flex gap-3">
                 <img className="w-11 h-12" src={porflio} alt="" />
                     <button className="btn">login</button>
                 </Link>
