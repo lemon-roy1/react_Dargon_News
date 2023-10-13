@@ -1,7 +1,22 @@
 import { Link, NavLink } from "react-router-dom";
 import porflio from "../../assets/user.png"
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Navber = () => {
+
+    const { user,logOut } = useContext(AuthContext)
+
+    const hendleSignOut=()=>{
+        logOut()
+        .then(result =>{
+            console.log(result);
+        })
+        .catch(err =>{
+            console.log(err);
+        })
+    }
+
     const NavLinks = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/About'>About</NavLink></li>
@@ -29,11 +44,17 @@ const Navber = () => {
                     {NavLinks}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <Link to="/login" className="flex gap-3">
+            <div className="navbar-end gap-3">
                 <img className="w-11 h-12" src={porflio} alt="" />
-                    <button className="btn">login</button>
-                </Link>
+                {
+                    user ?
+                        <button onClick={hendleSignOut} className="btn">sign Out</button>
+                        :
+                        <Link to="/login">
+                            <button className="btn">login</button>
+                        </Link>
+                }
+
 
             </div>
         </div>
