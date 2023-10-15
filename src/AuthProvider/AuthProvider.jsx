@@ -6,13 +6,22 @@ import { app } from "../Component/Firebase/Firebase.config";
 export const AuthContext = createContext(null)
 const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
+
     const [user, setUser] = useState(null)
+
+    // create email are password authentication firebase
+
     const createUser =(email,password)=>{
         return createUserWithEmailAndPassword(auth,email,password)
     }
+
+    // signOut auth firebase
+
     const logOut =()=>{
         return signOut(auth);
     }
+    // signin auth firebase
+
     const signIn=(email ,password)=>{
         return signInWithEmailAndPassword(auth ,email,password)
     }

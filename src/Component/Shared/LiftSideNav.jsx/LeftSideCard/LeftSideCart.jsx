@@ -8,7 +8,7 @@ const LeftSideCart = () => {
 
     return (
         <div>
-            <div className="card glass mb-3">
+            <div className="card glass mb-7 mt-8">
                 <figure><img src={img1} alt="card" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">Life hack</h2>
@@ -20,7 +20,7 @@ const LeftSideCart = () => {
                     </div>
                 </div>
             </div>
-            <div className="card glass mb-3">
+            <div className="card glass mb-7">
                 <figure><img src={img2} alt="card" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">Life hack</h2>
